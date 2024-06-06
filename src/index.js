@@ -10,16 +10,18 @@ import Avatar1 from './components/atoms/Avatar/Avatar.jsx';
 import LockIcon from './components/atoms/lockIcon/lockIcon.jsx';
 import SendIcon from './components/atoms/sendIcon/sendIcon.jsx';
 import CreateButton from './components/atoms/createButton/createButton.jsx';
-
+import HomePage from './components/atoms/homePageImg/homePageImg.jsx';
+import GroupName from './components/molecules/groupNames/groupNames.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Typography1 styles={{color:'red'}}>color</Typography1>
-    <Avatar1 name="Sontika Harshitha"/>
     <LockIcon/>
     <SendIcon/>
     <CreateButton/>
+    <HomePage/>
+    <GroupName name="Lokesh Gayam"/>
   </React.StrictMode>
 );
 

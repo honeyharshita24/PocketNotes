@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Avatar1 from '../../atoms/Avatar/Avatar';
+import Avatar1 from '../../atoms/AvatarIcon/AvatarIcon';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 

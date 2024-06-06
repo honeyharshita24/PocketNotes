@@ -12,7 +12,7 @@ import SendIcon from './components/atoms/sendIcon/sendIcon.jsx';
 import CreateButton from './components/atoms/createButton/createButton.jsx';
 import HomePageImg from './components/atoms/HomePageImg/HomePageImg.jsx';
 import GroupName from './components/molecules/GroupName/GroupName.jsx';
-import HomePage from './components/pages/homePage/homePage.jsx';
+import HomePage from './components/pages/HomePage/HomePage.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

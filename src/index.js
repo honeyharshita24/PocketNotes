@@ -10,9 +10,10 @@ import Avatar1 from './components/atoms/AvatarIcon/AvatarIcon.jsx';
 import LockIcon from './components/atoms/lockIcon/lockIcon.jsx';
 import SendIcon from './components/atoms/sendIcon/sendIcon.jsx';
 import CreateButton from './components/atoms/createButton/createButton.jsx';
-import HomePageImg from './components/atoms/HomePageImg/HomePageImg.jsx';
+import HomePageImage from './components/atoms/HomePageImg/HomePageImg.jsx';
 import GroupName from './components/molecules/GroupName/GroupName.jsx';
 import HomePage from './components/pages/HomePage/HomePage.jsx';
+import ImageText from './components/molecules/imageText/imageText.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -7,10 +7,10 @@ class Typography1 extends Component {
     render()
     
     { 
-      console.log(this.props)
-
+        const {styles, variant} = this.props 
+        
         return (
-        <Typography variant="h3" style={this.props.styles}>
+        <Typography variant= {variant} style={styles}>
         {this.props.children}
       </Typography>
       );

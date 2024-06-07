@@ -4,6 +4,7 @@ import { ThemeProvider } from '@mui/material';
 import theme from '../../../theme';
 import GroupName from '../../molecules/GroupName/GroupName';
 import AddIcon from '../../atoms/AddCircleIcon/AddCircleIcon';
+import ImageText from '../../molecules/imageText/imageText';
 
 class HomePage extends Component {
     state = {};
@@ -69,7 +70,9 @@ class HomePage extends Component {
                             <AddIcon />
                         </div>
                     </div>
-                    <div style={this.pageStyles.rightPane}>Right pane content</div>
+                    <div style={this.pageStyles.rightPane}>
+                        <ImageText/>
+                    </div>
                 </div>
             </ThemeProvider>
         );

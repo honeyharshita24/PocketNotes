@@ -1,20 +1,15 @@
-
 import React, { Component } from 'react';
 import Typography from '@mui/material/Typography';
 
-class Typography1 extends Component {
-    state = {  } 
-    render()
-    
-    { 
-      console.log(this.props)
-
+class Text extends Component {
+    render() {
+        const { variant, styles, children } = this.props;
         return (
-        <Typography variant="h3" style={this.props.styles}>
-        {this.props.children}
-      </Typography>
-      );
+            <Typography variant={variant} style={styles}>
+                {children}
+            </Typography>
+        );
     }
 }
- 
-export default Typography1;
+
+export default Text;

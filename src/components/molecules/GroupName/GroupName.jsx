@@ -14,7 +14,7 @@ class GroupName extends Component {
     return (
         <Box display="flex" alignItems="center" onClick={this.handleClick}>
           <Avatar1 name={name} color={color} />
-          <Text variant="h3" style={{ marginLeft: 24 }}>{name}</Text>
+          <Text variant="h3" styles={{marginLeft:18}}>{name}</Text>
         </Box>
     );
   }

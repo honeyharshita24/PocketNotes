@@ -7,18 +7,15 @@ import Box from "@mui/material/Box";
 import CreateButton from "../../atoms/CreateButton/CreateButton";
 import OutlinedTextField from "../../atoms/TextField/TextField";
 import ColorPicker from "../../organisms/ColorPicker/ColorPicker";
-
+import IconText from "../../molecules/IconText/IconText";
+import ImageText from "../../molecules/ImageText/ImageText";
 class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isMobile: false,
       isModalOpen: false,
-      noteGroupNames: [
-        { name: "Work Notes", color: "#000000" },
-        { name: "Personal Notes", color: "#000000" },
-        { name: "Family Notes", color: "#000000" }
-      ],
+      noteGroupNames: this.getNoteGroupsFromLocalStorage(),
       newGroupName: "",
       selectedColor: ""
     };
@@ -56,15 +53,27 @@ class HomePage extends Component {
   handleCreate = () => {
     const { newGroupName, selectedColor, noteGroupNames } = this.state;
     if (newGroupName.trim() && selectedColor) {
+      const updatedNoteGroupNames = [...noteGroupNames, { name: newGroupName, color: selectedColor }];
       this.setState({
-        noteGroupNames: [...noteGroupNames, { name: newGroupName, color: selectedColor }],
+        noteGroupNames: updatedNoteGroupNames,
         newGroupName: "",
         selectedColor: "",
         isModalOpen: false,
       });
+      this.saveNoteGroupsToLocalStorage(updatedNoteGroupNames);
     } else {
+      // Handle case when group name or color is not selected
       alert("Please enter a group name and select a color.");
     }
+  };
+
+  getNoteGroupsFromLocalStorage = () => {
+    const savedNoteGroups = localStorage.getItem('noteGroupNames');
+    return savedNoteGroups ? JSON.parse(savedNoteGroups) : [];
+  };
+
+  saveNoteGroupsToLocalStorage = (noteGroupNames) => {
+    localStorage.setItem('noteGroupNames', JSON.stringify(noteGroupNames));
   };
 
   pageStyles = {
@@ -99,6 +108,10 @@ class HomePage extends Component {
       width: "80%",
       height: "100vh",
       backgroundColor: "#DAE5F5",
+      display : 'flex',
+      flexDirection : 'column',
+      alignItems : 'center',
+      position: 'relative'
     },
     addIcon: {
       position: "absolute",
@@ -127,7 +140,7 @@ class HomePage extends Component {
   };
 
   render() {
-    const { isModalOpen, isMobile, noteGroupNames, newGroupName, selectedColor } = this.state;
+    const { isModalOpen, isMobile, noteGroupNames, newGroupName } = this.state;
     const colors = ["#B38BFA", "#FF79F2", "#43E6FC", "#F19576", "#0047FF", "#6691FF"];
 
     return (
@@ -149,7 +162,7 @@ class HomePage extends Component {
             </div>
           </div>
           {!isMobile && (
-            <div style={this.pageStyles.rightPane}>Right pane content</div>
+            <div style={this.pageStyles.rightPane}><ImageText/><IconText/></div>
           )}
         </div>
 

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Text from '../../atoms/Text/Text';
-import { ThemeProvider } from '@mui/material';
+import { ThemeProvider,Box } from '@mui/material';
 import theme from '../../../theme';
 import GroupName from '../../molecules/GroupName/GroupName';
 import AddIcon from '../../atoms/AddCircleIcon/AddCircleIcon';
 import ImageText from '../../molecules/imageText/imageText';
+import IconText from '../../molecules/iconText/iconText';
 
 class HomePage extends Component {
     state = {};
@@ -41,6 +42,10 @@ class HomePage extends Component {
             width: '80%',
             height: '100vh',
             backgroundColor: '#DAE5F5',
+            display : 'flex',
+            flexDirection : 'column',
+            alignItems : 'center',
+            position: 'relative'
         },
         addIcon: {
             position: 'absolute',
@@ -71,7 +76,7 @@ class HomePage extends Component {
                         </div>
                     </div>
                     <div style={this.pageStyles.rightPane}>
-                        <ImageText/>
+                        <ImageText/><IconText/>
                     </div>
                 </div>
             </ThemeProvider>

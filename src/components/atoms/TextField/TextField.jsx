@@ -18,26 +18,14 @@ const CustomTextField = styled(TextField)(({ theme }) => ({
 }));
 
 class OutlinedTextField extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: ''
-    };
-  }
-
-  handleChange = (event) => {
-    this.setState({ value: event.target.value });
-  };
-
   render() {
-    const { value } = this.state;
+    const { value, onChange } = this.props;
     return (
-     
         <CustomTextField
           variant="outlined"
           value={value}
           placeholder='Enter group name'
-          onChange={this.handleChange}
+          onChange={onChange}
           style={{ width: '435px', height:"51px"}}
         />
     );

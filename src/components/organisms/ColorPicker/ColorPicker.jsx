@@ -16,7 +16,7 @@ class ColorPicker extends React.Component {
     const { selectedColor } = this.state;
 
     return (
-      <div className="color-picker">
+      <div className="color-picker" style={{ display: 'flex', gap: '10px' }}>
         {colors.map((color) => (
           <div
             key={color}
@@ -27,7 +27,8 @@ class ColorPicker extends React.Component {
               width: '40px',
               height: '40px',
               display: 'inline-block',
-              border: '2px solid white',
+              border: selectedColor === color ? '3px solid black' : '2px solid white',
+              cursor: 'pointer',
             }}
             onClick={() => this.handleColorClick(color)}
           />

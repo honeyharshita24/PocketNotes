@@ -15,6 +15,7 @@ class CreateButton extends Component {
           height: "38px",
           borderRadius: "12px",
         }}
+        onClick={this.props.onClick}
       >
         <Text uppercase={false} variant="h3">
           Create

@@ -30,6 +30,18 @@ const theme = createTheme({
       lineHeight: '43.75px',
       color: '#000000',
     },
+    body1:{
+      fontSize: '18px',
+      fontWeight: 400,
+      lineHeight: '28.83px',
+      color: '#000000',
+    },
+    subtitle1: {
+      fontSize: '18px',
+      fontWeight: 500,
+      lineHeight: '17.58px',
+      color: '#000000',
+    },
   },
 });
 
